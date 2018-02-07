@@ -33,7 +33,7 @@ class Unflattened:
                     metric_dict[bucket_name] = v
             pretransposed_data.append(day_dict)
 
-        res.media = pretransposed_data
+        res.media = { "data": pretransposed_data }
 
 cors = CORS(allow_all_origins=True,
             allow_all_headers=True,
