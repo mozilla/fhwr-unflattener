@@ -11,7 +11,7 @@ export default (sourceURL, callback) => {
         }
 
         const output = {
-            'data': [],
+            'all': [],
         };
 
         const sourceData = JSON.parse(body);
@@ -53,7 +53,7 @@ export default (sourceURL, callback) => {
                 }
             });
 
-            output.data.push(entry);
+            output.all.push(entry);
         });
 
         callback(output);
