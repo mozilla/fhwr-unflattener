@@ -1,0 +1,55 @@
+import request from 'request';
+import decimal from 'decimal';
+
+
+export default (sourceURL, callback) => {
+    request(sourceURL, (error, response, body) => {
+        if (error) {
+            return callback({
+                error: 'Cannot fetch ' + source,
+            });
+        }
+
+        const output = {
+            'data': [],
+        };
+
+        const sourceData = JSON.parse(body);
+
+        sourceData.forEach((day, index) => {
+            const metrics = {};
+            const entry = { metrics };
+
+            Object.keys(day).forEach(key => {
+                const value = sourceData[index][key];
+                const split = key.split(/_(.+)/);
+
+                // It's metadata
+                if (split.length === 1) {
+                    entry[key] = value;
+
+                // It's a metric
+                } else {
+                    const newMetricName = split[0];
+
+                    // These aren't used
+                    if (newMetricName === 'cpuCoresSpeed') {
+                        return;
+                    }
+
+                    const bucketName = split[1];
+
+                    if (metrics[newMetricName] === undefined) {
+                        metrics[newMetricName] = {};
+                    }
+
+                    metrics[newMetricName][bucketName] = value;
+                }
+            });
+
+            output.data.push(entry);
+        });
+
+        callback(output);
+    });
+}

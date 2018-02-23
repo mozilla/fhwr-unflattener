@@ -1,0 +1,25 @@
+{
+    "name": "fhwr-unflattener",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node build/server",
+        "build": "babel src --source-maps --minified --out-dir build",
+        "postinstall": "npm run build",
+        "local": "npm-run-all --parallel local:*",
+        "local:build-and-watch": "babel src --watch --source-maps --out-dir build",
+        "local:start-and-watch": "nodemon build/server"
+    },
+    "dependencies": {
+        "babel-cli": "6.26.0",
+        "babel-preset-env": "1.6.1",
+        "decimal": "0.0.2",
+        "request": "2.83.0",
+        "restify": "6.3.4",
+        "restify-cors-middleware": "1.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "1.15.1",
+        "npm-run-all": "4.1.2"
+    }
+}

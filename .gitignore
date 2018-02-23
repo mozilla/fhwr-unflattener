@@ -1,3 +1,4 @@
-# Python
-env/
-*.pyc
+build
+
+# Node
+node_modules
