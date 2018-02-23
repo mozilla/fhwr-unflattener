@@ -27,6 +27,7 @@ export default (sourceURL, callback) => {
                 // It's metadata
                 if (split.length === 1) {
                     if (key === 'inactive' || key === 'broken') {
+                        // Avoid artifacts from floating point arithmetic when multiplying by 100
                         entry[key] = decimal(value).mul(100).toNumber();
                     } else {
                         entry[key] = value;
@@ -47,6 +48,7 @@ export default (sourceURL, callback) => {
                         metrics[newMetricName] = {};
                     }
 
+                    // Avoid artifacts from floating point arithmetic when multiplying by 100
                     metrics[newMetricName][bucketName] = decimal(value).mul(100).toNumber();
                 }
             });
