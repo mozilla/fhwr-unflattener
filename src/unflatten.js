@@ -26,7 +26,11 @@ export default (sourceURL, callback) => {
 
                 // It's metadata
                 if (split.length === 1) {
-                    entry[key] = value;
+                    if (key === 'inactive' || key === 'broken') {
+                        entry[key] = decimal(value).mul(100).toNumber();
+                    } else {
+                        entry[key] = value;
+                    }
 
                 // It's a metric
                 } else {
@@ -43,7 +47,7 @@ export default (sourceURL, callback) => {
                         metrics[newMetricName] = {};
                     }
 
-                    metrics[newMetricName][bucketName] = value;
+                    metrics[newMetricName][bucketName] = decimal(value).mul(100).toNumber();
                 }
             });
 
