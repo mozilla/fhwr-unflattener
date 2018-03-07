@@ -35,14 +35,26 @@ export default (sourceURL, callback) => {
 
                 // It's a metric
                 } else {
-                    const newMetricName = split[0];
+                    let newMetricName = split[0];
 
                     // These aren't used
                     if (newMetricName === 'cpuCoresSpeed') {
                         return;
                     }
 
-                    const bucketName = split[1];
+                    // Fix some metric names
+                    if (newMetricName === 'has') {
+                        newMetricName = 'hasUnity';
+                    }
+
+                    let bucketName = split[1];
+
+                    // Fix some bucket names
+                    if (bucketName === 'unity_True') {
+                        bucketName = 'True';
+                    } else if (bucketName === 'unity_False') {
+                        bucketName = 'False';
+                    }
 
                     if (metrics[newMetricName] === undefined) {
                         metrics[newMetricName] = {};
