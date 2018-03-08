@@ -65,7 +65,7 @@ export default (sourceURL, callback) => {
                 }
             });
 
-            output.all.push(entry);
+            output.default.push(entry);
         });
 
         callback(output);
