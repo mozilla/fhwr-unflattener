@@ -11,7 +11,7 @@ export default (sourceURL, callback) => {
         }
 
         const output = {
-            'all': [],
+            'default': [],
         };
 
         const sourceData = JSON.parse(body);
