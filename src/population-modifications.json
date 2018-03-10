@@ -72,13 +72,22 @@
             "Darwin-14.5.0"
         ],
         "macOS El Capitan": [
+            "Darwin-15.3.0",
+            "Darwin-15.4.0",
+            "Darwin-15.5.0",
             "Darwin-15.6.0"
         ],
         "macOS Sierra": [
+            "Darwin-16.1.0",
+            "Darwin-16.2.0",
+            "Darwin-16.3.0",
+            "Darwin-16.4.0",
             "Darwin-16.5.0",
+            "Darwin-16.6.0",
             "Darwin-16.7.0"
         ],
         "macOS High Sierra": [
+            "Darwin-17.2.0",
             "Darwin-17.3.0",
             "Darwin-17.4.0"
         ],
