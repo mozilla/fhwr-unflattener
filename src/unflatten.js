@@ -84,21 +84,28 @@ function modifyPopulations(data) {
     data.default.forEach((entry, index) => {
 
         // For each metric NAME in that entry
-        Object.keys(data.default[index].metrics).forEach(metricName => {
-
+        Object.keys(entry.metrics).forEach(metricName => {
             if (!(metricName in populationModifications)) return;
 
             // For each new population NAME for that metric
             Object.keys(populationModifications[metricName]).forEach(newPopulationName => {
-                let tally = 0;
+                let total = 0;
+                let atLeastOneGroupMemberFound = false;
 
                 // For each group member NAME of that new population
                 populationModifications[metricName][newPopulationName].forEach(groupMember => {
-                    tally = decimal(tally).add(data.default[index].metrics[metricName][groupMember]).toNumber();
-                    delete data.default[index].metrics[metricName][groupMember];
+
+                    if (groupMember in entry.metrics[metricName]) {
+                        atLeastOneGroupMemberFound = true;
+                        total = decimal(total).add(entry.metrics[metricName][groupMember]).toNumber();
+                        delete entry.metrics[metricName][groupMember];
+                    }
+
                 });
 
-                data.default[index].metrics[metricName][newPopulationName] = tally;
+                if (atLeastOneGroupMemberFound) {
+                    entry.metrics[metricName][newPopulationName] = total;
+                }
 
             }); // For each new population NAME for that metric
 
