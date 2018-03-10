@@ -100,5 +100,124 @@
         "Other": [
             "Other"
         ]
+    },
+    "gpuModel": {
+        "Haswell (GT2)": [
+            "gen7.5-haswell-gt2"
+        ],
+        "Ivy Bridge (GT2)": [
+            "gen7-ivybridge-gt2"
+        ],
+        "Sandy Bridge (GT2)": [
+            "gen6-sandybridge-gt2"
+        ],
+        "Sandy Bridge (GT1)": [
+            "gen6-sandybridge-gt1"
+        ],
+        "Ivy Bridge (GT1)": [
+            "gen7-ivybridge-gt1"
+        ],
+        "GMA 4500HD": [
+            "gen4.5-gma4500hd"
+        ],
+        "Ironlake": [
+            "gen5-ironlake"
+        ],
+        "Bay Trail": [
+            "gen7-baytrail"
+        ],
+        "GMA 4500": [
+            "gen4.5-gma4500"
+        ],
+        "Broadwell (GT2)": [
+            "gen8-broadwell-gt2"
+        ],
+        "GMA 3100": [
+            "gen3-gma3100"
+        ],
+        "GMA 950": [
+            "gen3-gma950"
+        ],
+        "Haswell (GT21)": [
+            "gen7.5-haswell-gt21"
+        ],
+        "Ivy Bridge (GT22)": [
+            "gen7-ivybridge-gt22"
+        ],
+        "Sandy Bridge (GT23)": [
+            "gen6-sandybridge-gt23"
+        ],
+        "Sandy Bridge (GT14)": [
+            "gen6-sandybridge-gt14"
+        ],
+        "Sandy Bridge (GT15)": [
+            "gen7-ivybridge-gt15"
+        ],
+        "GMA 4500HD 6": [
+            "gen4.5-gma4500hd6"
+        ],
+        "Ironlake": [
+            "gen5-ironlake7"
+        ],
+        "Bay Trail 8": [
+            "gen7-baytrail8"
+        ],
+        "GMA 4500 9": [
+            "gen4.5-gma45009"
+        ],
+        "Broadwell (GT 210)": [
+            "gen8-broadwell-gt210"
+        ],
+        "GMA 310011": [
+            "gen3-gma310011"
+        ],
+        "Evergreen (Palm)": [
+            "EVERGREEN-PALM"
+        ],
+        "Skylake (GT2)": [
+            "gen9-skylake-gt2"
+        ],
+        "Evergreen (Cedar)": [
+            "EVERGREEN-CEDAR"
+        ],
+        "Cayman (Aruba)": [
+            "CAYMAN-ARUBA"
+        ],
+        "GMA 3500": [
+            "gen4-gma3500"
+        ],
+        "GeForce GT218": [
+            "Tesla-GT218"
+        ],
+        "GeForce NV40": [
+            "NV40-C61"
+        ],
+        "Haswell (GT3)": [
+            "gen7.5-haswell-gt3"
+        ],
+        "Haswell (GT1)": [
+            "gen7.5-haswell-gt1"
+        ],
+        "Evergreen (Turks)": [
+            "EVERGREEN-TURKS"
+        ],
+        "Cherry View": [
+            "gen8-cherryview"
+        ],
+        "Kabylake (GT2)": [
+            "gen9-kabylake-gt2"
+        ],
+        "Broadwell (GT3)": [
+            "gen8-broadwell-gt3"
+        ],
+        "Ironlake": [
+            "gen5-ironlake"
+        ],
+        "__REMOVE__": [
+            "Other",
+            "Unknown",
+            "CIK-MULLINS",
+            "R600-RS880"
+        ]
     }
 }

@@ -90,20 +90,22 @@ function modifyPopulations(data) {
             // For each new population NAME for that metric
             Object.keys(populationModifications[metricName]).forEach(newPopulationName => {
                 let total = 0;
-                let atLeastOneGroupMemberFound = false;
+                let processed = false;
 
                 // For each group member NAME of that new population
                 populationModifications[metricName][newPopulationName].forEach(groupMember => {
 
-                    if (groupMember in entry.metrics[metricName]) {
-                        atLeastOneGroupMemberFound = true;
-                        total = decimal(total).add(entry.metrics[metricName][groupMember]).toNumber();
-                        delete entry.metrics[metricName][groupMember];
+                    if (newPopulationName !== '__REMOVE__') {
+                        if (groupMember in entry.metrics[metricName]) {
+                            processed = true;
+                            total = decimal(total).add(entry.metrics[metricName][groupMember]).toNumber();
+                        }
                     }
 
+                    delete entry.metrics[metricName][groupMember];
                 });
 
-                if (atLeastOneGroupMemberFound) {
+                if (processed) {
                     entry.metrics[metricName][newPopulationName] = total;
                 }
 
