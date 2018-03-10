@@ -310,5 +310,85 @@
             "CIK-MULLINS",
             "R600-RS880"
         ]
+    },
+    "ram": {
+        "renames": [
+            {
+                "from": "0",
+                "to": "0GB"
+            },
+            {
+                "from": "1",
+                "to": "1GB"
+            },
+            {
+                "from": "2",
+                "to": "2GB"
+            },
+            {
+                "from": "3",
+                "to": "3GB"
+            },
+            {
+                "from": "4",
+                "to": "4GB"
+            },
+            {
+                "from": "6",
+                "to": "6GB"
+            },
+            {
+                "from": "7",
+                "to": "7GB"
+            },
+            {
+                "from": "8",
+                "to": "8GB"
+            },
+            {
+                "from": "12",
+                "to": "12GB"
+            },
+            {
+                "from": "16",
+                "to": "16GB"
+            }
+        ]
+    },
+    "cpuVendor": {
+        "renames": [
+            {
+                "from": "GenuineIntel",
+                "to": "Intel"
+            },
+            {
+                "from": "AuthenticAMD",
+                "to": "AMD"
+            }
+        ]
+    },
+    "browserArch": {
+        "renames": [
+            {
+                "from": "x86",
+                "to": "32-bit"
+            },
+            {
+                "from": "x86-64",
+                "to": "64-bit"
+            }
+        ]
+    },
+    "osArch": {
+        "renames": [
+            {
+                "from": "x86",
+                "to": "32-bit"
+            },
+            {
+                "from": "x86-64",
+                "to": "64-bit"
+            }
+        ]
     }
 }
