@@ -1,0 +1,95 @@
+{
+    "cpuSpeed": {
+        "Less than 1.4 GHz": [
+            "1.3"
+        ],
+        "1.4 GHz to 1.49 GHz": [
+            "1.4"
+        ],
+        "1.5 GHz to 1.69 GHz": [
+            "1.5",
+            "1.6"
+        ],
+        "1.7 GHz to 1.99 GHz": [
+            "1.7",
+            "1.8",
+            "1.9"
+        ],
+        "2.0 GHz to 2.29 GHz": [
+            "2.0",
+            "2.1",
+            "2.2"
+        ],
+        "2.3 GHz to 2.69 GHz": [
+            "2.3",
+            "2.4",
+            "2.5",
+            "2.6"
+        ],
+        "2.7 GHz to 2.99 GHz": [
+            "2.7",
+            "2.8",
+            "2.9"
+        ],
+        "3.0 GHz to 3.29 GHz": [
+            "3.0",
+            "3.1",
+            "3.2"
+        ],
+        "3.3 GHz to 3.69 GHz": [
+            "3.3",
+            "3.4",
+            "3.5",
+            "3.6"
+        ],
+        "3.7 GHz to 3.99 GHz": [
+            "3.7"
+        ]
+    },
+    "osName": {
+        "Windows XP": [
+            "Windows_NT-5.1"
+        ],
+        "Windows Vista": [
+            "Windows_NT-6.0"
+        ],
+        "Windows 7": [
+            "Windows_NT-6.1"
+        ],
+        "Windows 8": [
+            "Windows_NT-6.2"
+        ],
+        "Windows 8.1": [
+            "Windows_NT-6.3"
+        ],
+        "Windows 10": [
+            "Windows_NT-10.0"
+        ],
+        "Windows Other": [
+            "Windows_NT-Other"
+        ],
+        "macOS Yosemite": [
+            "Darwin-14.5.0"
+        ],
+        "macOS El Capitan": [
+            "Darwin-15.6.0"
+        ],
+        "macOS Sierra": [
+            "Darwin-16.5.0",
+            "Darwin-16.7.0"
+        ],
+        "macOS High Sierra": [
+            "Darwin-17.3.0",
+            "Darwin-17.4.0"
+        ],
+        "macOS Other": [
+            "Darwin-Other"
+        ],
+        "Linux": [
+            "Linux-Other"
+        ],
+        "Other": [
+            "Other"
+        ]
+    }
+}

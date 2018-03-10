@@ -13,7 +13,7 @@ export default (flatURL, callback) => {
         }
 
         const flatData = JSON.parse(body);
-        callback(groupPopulations(format(flatData)));
+        callback(modifyPopulations(format(flatData)));
     });
 }
 
@@ -77,8 +77,8 @@ function format(flatData) {
     return output;
 }
 
-function groupPopulations(data) {
-    const populationGroups = JSON.parse(fs.readFileSync(path.resolve('src/population-groups.json'), 'utf8'));
+function modifyPopulations(data) {
+    const populationModifications = JSON.parse(fs.readFileSync(path.resolve('src/population-modifications.json'), 'utf8'));
 
     // For each entry
     data.default.forEach((entry, index) => {
@@ -86,21 +86,21 @@ function groupPopulations(data) {
         // For each metric NAME in that entry
         Object.keys(data.default[index].metrics).forEach(metricName => {
 
-            if (!(metricName in populationGroups)) return;
+            if (!(metricName in populationModifications)) return;
 
-            // For each group NAME for that metric
-            Object.keys(populationGroups[metricName]).forEach(groupName => {
+            // For each new population NAME for that metric
+            Object.keys(populationModifications[metricName]).forEach(newPopulationName => {
                 let tally = 0;
 
-                // For each group member NAME of that group
-                populationGroups[metricName][groupName].forEach(groupMember => {
+                // For each group member NAME of that new population
+                populationModifications[metricName][newPopulationName].forEach(groupMember => {
                     tally = decimal(tally).add(data.default[index].metrics[metricName][groupMember]).toNumber();
                     delete data.default[index].metrics[metricName][groupMember];
                 });
 
-                data.default[index].metrics[metricName][groupName] = tally;
+                data.default[index].metrics[metricName][newPopulationName] = tally;
 
-            }); // For each group NAME for that metric
+            }); // For each new population NAME for that metric
 
         }); // For each metric NAME in that entry
 
