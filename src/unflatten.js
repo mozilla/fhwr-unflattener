@@ -80,36 +80,49 @@ function format(flatData) {
 function modifyPopulations(data) {
     const populationModifications = JSON.parse(fs.readFileSync(path.resolve('src/population-modifications.json'), 'utf8'));
 
-    // For each entry
+    // For each entry in the formatted data
     data.default.forEach((entry, index) => {
 
         // For each metric NAME in that entry
         Object.keys(entry.metrics).forEach(metricName => {
-            if (!(metricName in populationModifications)) return;
+            if (metricName in populationModifications) {
 
-            // For each new population NAME for that metric
-            Object.keys(populationModifications[metricName]).forEach(newPopulationName => {
-                let total = 0;
-                let processed = false;
-
-                // For each group member NAME of that new population
-                populationModifications[metricName][newPopulationName].forEach(groupMember => {
-
-                    if (newPopulationName !== '__REMOVE__') {
-                        if (groupMember in entry.metrics[metricName]) {
-                            processed = true;
-                            total = decimal(total).add(entry.metrics[metricName][groupMember]).toNumber();
-                        }
-                    }
-
-                    delete entry.metrics[metricName][groupMember];
-                });
-
-                if (processed) {
-                    entry.metrics[metricName][newPopulationName] = total;
+                // Process removals
+                if (populationModifications[metricName].removals) {
+                    populationModifications[metricName].removals.forEach(populationToBeRemoved => {
+                        delete entry.metrics[metricName][populationToBeRemoved];
+                    });
                 }
 
-            }); // For each new population NAME for that metric
+                // Process renames
+                if (populationModifications[metricName].renames) {
+                    populationModifications[metricName].renames.forEach(renameMeta => {
+                        entry.metrics[metricName][renameMeta.to] = entry.metrics[metricName][renameMeta.from];
+                        delete entry.metrics[metricName][renameMeta.from];
+                    });
+                }
+
+                // Process replacement groups
+                if (populationModifications[metricName].replacementGroups) {
+                    populationModifications[metricName].replacementGroups.forEach(rg => {
+                        let combinedPopulationsValue = 0;
+                        let processedAtLeastOneMember = false;
+
+                        rg.members.forEach(populationToSubsume => {
+                            if (populationToSubsume in entry.metrics[metricName]) {
+                                processedAtLeastOneMember = true;
+                                combinedPopulationsValue = decimal(combinedPopulationsValue).add(entry.metrics[metricName][populationToSubsume]).toNumber();
+                                delete entry.metrics[metricName][populationToSubsume];
+                            }
+                        });
+
+                        if (processedAtLeastOneMember) {
+                            entry.metrics[metricName][rg.name] = combinedPopulationsValue;
+                        }
+                    });
+                }
+
+            }
 
         }); // For each metric NAME in that entry
 
