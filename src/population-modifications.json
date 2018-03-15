@@ -390,5 +390,15 @@
                 "to": "64-bit"
             }
         ]
+    },
+    "hasFlash": {
+        "removals": [
+            "False"
+        ]
+    },
+    "hasUnity": {
+        "removals": [
+            "False"
+        ]
     }
 }
