@@ -20,6 +20,6 @@
     },
     "devDependencies": {
         "nodemon": "1.17.3",
-        "npm-run-all": "4.1.2"
+        "npm-run-all": "4.1.3"
     }
 }
