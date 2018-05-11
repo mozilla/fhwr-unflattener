@@ -30,16 +30,15 @@ function format(flatData) {
             const value = flatData[index][key];
             const split = key.split(/_(.+)/);
 
-            // It's metadata
-            if (split.length === 1) {
-                if (key === 'inactive' || key === 'broken') {
-                    // Avoid artifacts from floating point arithmetic when multiplying by 100
-                    entry[key] = decimal(value).mul(100).toNumber();
-                } else {
-                    entry[key] = value;
-                }
+            // Preserve the date property
+            if (key === 'date') {
+                entry[key] = value;
 
-            // It's a metric
+            // Ignore "inactive" and "broken", which we don't use
+            } else if (key === 'inactive' || key === 'broken') {
+                return;
+
+            // Use everything else
             } else {
                 let newMetricName = split[0];
 
