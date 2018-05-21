@@ -14,7 +14,7 @@
         "babel-cli": "6.26.0",
         "babel-preset-env": "1.7.0",
         "decimal": "0.0.2",
-        "request": "2.85.0",
+        "request": "2.87.0",
         "restify": "7.1.1",
         "restify-cors-middleware": "1.1.0"
     },
