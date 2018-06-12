@@ -9,7 +9,7 @@
         "local": "npm-run-all --parallel local:*",
         "local:build-and-watch": "babel src --watch --source-maps --out-dir build",
         "local:start-and-watch": "nodemon build/server",
-        "test": "npm audit"
+        "posttest": "npm audit || true"
     },
     "dependencies": {
         "babel-cli": "6.26.0",
