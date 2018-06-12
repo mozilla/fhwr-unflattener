@@ -19,3 +19,7 @@ default. When that happens, we won't need this project any more.
 #### In production
 
 `npm run start`
+
+### Test
+
+Run `npm test`
