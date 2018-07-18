@@ -20,7 +20,7 @@
         "restify-cors-middleware": "1.1.1"
     },
     "devDependencies": {
-        "nodemon": "1.18.1",
+        "nodemon": "1.18.3",
         "npm-run-all": "4.1.3"
     }
 }
