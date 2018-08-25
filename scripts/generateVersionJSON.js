@@ -9,7 +9,7 @@ const outFilename = './version.json';
 const versionJSON = {
     source: 'https://github.com/mozilla/fhwr-unflattener',
     version: packageJSON.version,
-    commit: childProcess.execSync('git rev-parse HEAD').toString().trim(),
+    commit: process.env.SOURCE_VERSION || childProcess.execSync('git rev-parse HEAD').toString().trim(),
 };
 
 fs.writeFile(outFilename, JSON.stringify(versionJSON, null, 4), error => {
