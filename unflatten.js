@@ -1,19 +1,17 @@
-import request from 'request';
-import decimal from 'decimal';
-import fs from 'fs';
-import path from 'path';
+const request = require('request');
+const decimal = require('decimal');
+const fs = require('fs');
+const path = require('path');
 
 
-export default (flatURL, callback) => {
+module.exports = (flatURL, cb) => {
     request(flatURL, (error, response, body) => {
         if (error) {
-            return callback({
-                error: 'Cannot fetch ' + source,
-            });
+            return cb('Cannot fetch ' + flatURL);
         }
 
         const flatData = JSON.parse(body);
-        callback(modifyPopulations(format(flatData)));
+        cb(null, modifyPopulations(format(flatData)));
     });
 }
 
@@ -77,10 +75,10 @@ function format(flatData) {
 }
 
 function modifyPopulations(data) {
-    const populationModifications = JSON.parse(fs.readFileSync(path.resolve('src/population-modifications.json'), 'utf8'));
+    const populationModifications = require('./population-modifications.json');
 
     // For each entry in the formatted data
-    data.default.forEach((entry, index) => {
+    data.default.forEach(entry => {
 
         // For each metric NAME in that entry
         Object.keys(entry.metrics).forEach(metricName => {

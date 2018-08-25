@@ -1,9 +1,6 @@
 fhwr-unflattener serves the Firefox Hardware Report dataset in the format the
 [ensemble-transposer](https://github.com/mozilla/ensemble-transposer) expects.
 
-Eventually, we want the Firefox Hardware Report data to be formatted this way by
-default. When that happens, we won't need this project any more.
-
 ## Development
 
 ### Install
@@ -14,7 +11,7 @@ default. When that happens, we won't need this project any more.
 
 #### Locally
 
-`npm run local`
+`npm run dev`
 
 #### In production
 

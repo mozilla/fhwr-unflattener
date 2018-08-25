@@ -3,24 +3,26 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node build/server",
-        "build": "babel src --source-maps --minified --out-dir build",
+        "start": "node server",
+        "dev": "nodemon build/server",
+        "build": "node scripts/generateVersionJSON",
         "postinstall": "npm run build",
-        "local": "npm-run-all --parallel local:*",
-        "local:build-and-watch": "babel src --watch --source-maps --out-dir build",
-        "local:start-and-watch": "nodemon build/server",
+        "test": "npm run lint",
+        "lint": "eslint --ext=.js,.json .",
         "posttest": "npm audit || true"
     },
     "dependencies": {
-        "babel-cli": "6.26.0",
-        "babel-preset-env": "1.7.0",
+        "cors": "2.8.4",
         "decimal": "0.0.2",
-        "request": "2.88.0",
-        "restify": "7.2.1",
-        "restify-cors-middleware": "1.1.1"
+        "express": "4.16.3",
+        "helmet": "3.13.0",
+        "morgan": "1.9.0",
+        "request": "2.88.0"
     },
     "devDependencies": {
-        "nodemon": "1.18.3",
-        "npm-run-all": "4.1.3"
+        "eslint": "5.4.0",
+        "eslint-plugin-json": "1.2.1",
+        "eslint-plugin-node": "7.0.1",
+        "nodemon": "1.18.3"
     }
 }
