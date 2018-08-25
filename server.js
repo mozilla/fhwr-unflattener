@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 const request = require('request');
+const forceSSL = require('express-force-ssl');
 
 const unflatten = require('./unflatten');
 
@@ -12,8 +13,26 @@ const data = 'https://analysis-output.telemetry.mozilla.org/game-hardware-survey
 const port = process.env.PORT || 8000;
 const app = express();
 
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'none'"],
+        },
+    },
+    frameguard: {
+        action: 'deny',
+    },
+    referrerPolicy: {
+        policy: 'no-referrer',
+    },
+}));
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(forceSSL);
+}
+
 app.use(cors());
+
 app.use(morgan('combined'));
 
 app.get('/', (req, res) => {
