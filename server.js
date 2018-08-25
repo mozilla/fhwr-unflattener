@@ -53,14 +53,14 @@ app.get('/__version__', (req, res) => {
 });
 
 app.get('/__heartbeat__', (req, res) => {
-    res.sendStatus(200);
-});
-
-app.get('/__lbheartbeat__', (req, res) => {
     request(data, error => {
         if (error) res.status(500).send('Cannot fetch ' + data);
         res.sendStatus(200);
     });
+});
+
+app.get('/__lbheartbeat__', (req, res) => {
+    res.sendStatus(200);
 });
 
 app.listen(process.env.PORT, () => {
