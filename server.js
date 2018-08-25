@@ -28,6 +28,9 @@ app.use(helmet({
 }));
 
 if (process.env.NODE_ENV === 'production') {
+    app.set('forceSSLOptions', {
+        trustXFPHeader: true,
+    });
     app.use(forceSSL);
 }
 
