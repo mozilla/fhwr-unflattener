@@ -7,7 +7,7 @@ const packageJSON = require('../package.json');
 const outFilename = './version.json';
 
 const versionJSON = {
-    source: 'https://github.com/mozilla/fhwr-unflattener',
+    source: 'https://github.com/mozilla/workshop',
     version: packageJSON.version,
     commit: process.env.SOURCE_VERSION || childProcess.execSync('git rev-parse HEAD').toString().trim(),
 };

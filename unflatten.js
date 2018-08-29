@@ -121,7 +121,7 @@ function modifyPopulations(data) {
 
                 // If there's only one population, make the value of that
                 // population the value of the metric.
-                // https://github.com/mozilla/fhwr-unflattener/issues/10
+                // https://github.com/mozilla/workshop/issues/10
                 if (typeof entry.metrics[metricName] === 'object' && Object.keys(entry.metrics[metricName]).length === 1) {
                     const value = entry.metrics[metricName][Object.keys(entry.metrics[metricName])[0]];
                     entry.metrics[metricName] = value;

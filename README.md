@@ -1,5 +1,6 @@
-fhwr-unflattener serves the Firefox Hardware Report dataset in the format the
-[ensemble-transposer](https://github.com/mozilla/ensemble-transposer) expects.
+Workshop, previously called fhwr-unflattener, serves the Firefox Hardware Report
+dataset in the format that [ensemble-transposer](https://github.com/mozilla/ensemble-transposer)
+expects.
 
 ## Development
 
