@@ -16,7 +16,7 @@ const app = express();
 app.use(helmet({
     contentSecurityPolicy: {
         directives: {
-            defaultSrc: ['\'none\''],
+            defaultSrc: ["'none'"],
         },
     },
     frameguard: {
