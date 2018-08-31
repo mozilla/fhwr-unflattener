@@ -134,6 +134,7 @@
             {
                 "name": "macOS Sierra",
                 "members": [
+                    "Darwin-16.0.0",
                     "Darwin-16.1.0",
                     "Darwin-16.2.0",
                     "Darwin-16.3.0",
