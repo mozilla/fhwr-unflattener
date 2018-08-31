@@ -125,10 +125,16 @@
             {
                 "name": "macOS El Capitan",
                 "members": [
+                    "Darwin-15.0.0",
+                    "Darwin-15.1.0",
+                    "Darwin-15.2.0",
                     "Darwin-15.3.0",
                     "Darwin-15.4.0",
                     "Darwin-15.5.0",
-                    "Darwin-15.6.0"
+                    "Darwin-15.6.0",
+                    "Darwin-15.7.0",
+                    "Darwin-15.8.0",
+                    "Darwin-15.9.0"
                 ]
             },
             {
@@ -141,15 +147,39 @@
                     "Darwin-16.4.0",
                     "Darwin-16.5.0",
                     "Darwin-16.6.0",
-                    "Darwin-16.7.0"
+                    "Darwin-16.7.0",
+                    "Darwin-16.8.0",
+                    "Darwin-16.9.0"
                 ]
             },
             {
                 "name": "macOS High Sierra",
                 "members": [
+                    "Darwin-17.0.0",
+                    "Darwin-17.1.0",
                     "Darwin-17.2.0",
                     "Darwin-17.3.0",
-                    "Darwin-17.4.0"
+                    "Darwin-17.4.0",
+                    "Darwin-17.5.0",
+                    "Darwin-17.6.0",
+                    "Darwin-17.7.0",
+                    "Darwin-17.8.0",
+                    "Darwin-17.9.0"
+                ]
+            },
+            {
+                "name": "macOS Mojave",
+                "members": [
+                    "Darwin-18.0.0",
+                    "Darwin-18.1.0",
+                    "Darwin-18.2.0",
+                    "Darwin-18.3.0",
+                    "Darwin-18.4.0",
+                    "Darwin-18.5.0",
+                    "Darwin-18.6.0",
+                    "Darwin-18.7.0",
+                    "Darwin-18.8.0",
+                    "Darwin-18.9.0"
                 ]
             }
         ]
