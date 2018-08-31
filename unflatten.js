@@ -1,7 +1,5 @@
 const request = require('request');
 const decimal = require('decimal');
-const fs = require('fs');
-const path = require('path');
 
 
 module.exports = (flatURL, cb) => {

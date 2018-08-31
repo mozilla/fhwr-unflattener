@@ -1,29 +1,43 @@
 {
-    "name": "workshop",
-    "version": "1.1.0",
-    "private": true,
-    "scripts": {
-        "start": "node server",
-        "dev": "nodemon build/server",
-        "build": "node scripts/generateVersionJSON",
-        "postinstall": "npm run build",
-        "test": "npm run lint",
-        "lint": "eslint --ext=.js,.json .",
-        "posttest": "npm audit || true"
-    },
-    "dependencies": {
-        "cors": "2.8.4",
-        "decimal": "0.0.2",
-        "express": "4.16.3",
-        "express-force-ssl": "0.3.2",
-        "helmet": "3.13.0",
-        "morgan": "1.9.0",
-        "request": "2.88.0"
-    },
-    "devDependencies": {
-        "eslint": "5.4.0",
-        "eslint-plugin-json": "1.2.1",
-        "eslint-plugin-node": "7.0.1",
-        "nodemon": "1.18.3"
-    }
+  "name": "workshop",
+  "version": "1.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon build/server",
+    "build": "node scripts/generateVersionJSON",
+    "postinstall": "npm run build",
+    "test": "npm run lint",
+    "lint": "eslint --ext=.js,.json .",
+    "posttest": "npm audit || true"
+  },
+  "dependencies": {
+    "cors": "2.8.4",
+    "decimal": "0.0.2",
+    "express": "4.16.3",
+    "express-force-ssl": "0.3.2",
+    "helmet": "3.13.0",
+    "morgan": "1.9.0",
+    "request": "2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "5.4.0",
+    "eslint-plugin-json": "1.2.1",
+    "eslint-plugin-node": "7.0.1",
+    "nodemon": "1.18.3"
+  },
+  "description": "Workshop, previously called fhwr-unflattener, serves the Firefox Hardware Report dataset in the format that ensemble-transposer expects.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mozilla/workshop.git"
+  },
+  "keywords": [],
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/mozilla/workshop/issues"
+  },
+  "homepage": "https://github.com/mozilla/workshop#readme"
 }
