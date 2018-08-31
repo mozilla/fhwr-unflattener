@@ -41,7 +41,7 @@ app.use(morgan('combined'));
 app.get('/', (req, res) => {
     unflatten(data, (error, output) => {
         if (error) {
-            res.status(500).send(error);
+            return res.status(500).send(error);
         }
         res.send(output);
     });
@@ -54,7 +54,9 @@ app.get('/__version__', (req, res) => {
 
 app.get('/__heartbeat__', (req, res) => {
     request(data, error => {
-        if (error) res.status(500).send('Cannot fetch ' + data);
+        if (error) {
+            return res.status(500).send('Cannot fetch ' + data);
+        }
         res.sendStatus(200);
     });
 });
@@ -63,7 +65,7 @@ app.get('/__lbheartbeat__', (req, res) => {
     res.sendStatus(200);
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
     // eslint-disable-next-line no-console
     console.log(`Listening on port ${port}...`)
 });
