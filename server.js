@@ -41,7 +41,8 @@ app.use(morgan('combined'));
 app.get('/', (req, res) => {
     unflatten(data, (error, output) => {
         if (error) {
-            return res.status(500).send(error);
+            console.error('Error: ' + error);
+            return res.status(500).send('Error: ' + error);
         }
         res.send(output);
     });
@@ -55,7 +56,8 @@ app.get('/__version__', (req, res) => {
 app.get('/__heartbeat__', (req, res) => {
     request(data, error => {
         if (error) {
-            return res.status(500).send('Cannot fetch ' + data);
+            console.error('Error: Cannot fetch ' + data);
+            return res.status(500).send('Error: Cannot fetch ' + data);
         }
         res.sendStatus(200);
     });
