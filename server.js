@@ -41,6 +41,7 @@ app.use(morgan('combined'));
 app.get('/', (req, res) => {
     unflatten(data, (error, output) => {
         if (error) {
+            // eslint-disable-next-line no-console
             console.error('Error: ' + error);
             return res.status(500).send('Error: ' + error);
         }
@@ -56,6 +57,7 @@ app.get('/__version__', (req, res) => {
 app.get('/__heartbeat__', (req, res) => {
     request(data, error => {
         if (error) {
+            // eslint-disable-next-line no-console
             console.error('Error: Cannot fetch ' + data);
             return res.status(500).send('Error: Cannot fetch ' + data);
         }
