@@ -7,7 +7,7 @@
     },
     "scripts": {
         "start": "node server",
-        "dev": "nodemon build/server",
+        "dev": "nodemon server",
         "build": "node scripts/generateVersionJSON",
         "postinstall": "npm run build",
         "test": "npm run lint",
