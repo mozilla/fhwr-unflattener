@@ -15,7 +15,7 @@
         "posttest": "npm audit || true"
     },
     "dependencies": {
-        "cors": "2.8.4",
+        "cors": "2.8.5",
         "decimal": "0.0.2",
         "express": "4.16.4",
         "express-force-ssl": "0.3.2",
