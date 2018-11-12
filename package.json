@@ -19,7 +19,7 @@
         "decimal": "0.0.2",
         "express": "4.16.4",
         "express-force-ssl": "0.3.2",
-        "helmet": "3.14.0",
+        "helmet": "3.15.0",
         "morgan": "1.9.1",
         "request": "2.88.0"
     },
